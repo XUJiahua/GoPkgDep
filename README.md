@@ -12,7 +12,7 @@
 以ethereum源码为例。
 
 ```
-python prePkgDep.py $GOPATH/src/github.com/ethereum/go-ethereum
+python3 prePkgDep.py $GOPATH/src/github.com/ethereum/go-ethereum
 ```
 
 *路径可以是相对路径，绝对路径。*
@@ -29,8 +29,22 @@ python prePkgDep.py $GOPATH/src/github.com/ethereum/go-ethereum
 以ethdb这个包为例。
 
 ```
-python pkgDep.py github.com/ethereum/go-ethereum/ethdb/leveldb
+python3 pkgDep.py github.com/ethereum/go-ethereum/ethdb/leveldb
 ```
+
+### Goland External Tools
+
+配置上述脚本到External Tools，使用上还是挺方便的，对所有Go项目有效。
+
+比如配置prePkgDep.py，主要参数如下：
+
+```
+Program: python3
+Arguments: /path/to/GoPkgDep/prePkgDep.py $FileDir$
+Working directory: $ProjectFileDir$
+```
+
+使用：右键项目找external tools，找到上述项目并点击即可。
 
 ### 反思
 
